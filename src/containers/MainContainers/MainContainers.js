@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import {fetchNews} from "../../store/actions/newsSyncActions";
+import {fetchComments, fetchNews} from "../../store/actions/newsSyncActions";
 import {connect} from "react-redux";
-import {Button, Card, CardBody, CardTitle} from "reactstrap";
+import {Button, Card, CardBody, CardText} from "reactstrap";
 import './MainContainer.css'
 import {Link} from "react-router-dom";
 
@@ -16,9 +16,19 @@ class MainContainers extends Component {
         console.log(this.props.news);
         const news = this.props.news.map(newItem => {
             return (
-                <Card className="newItem" key={newItem.id }>
-                    <CardBody>
-                        <CardTitle><strong>{newItem.title}</strong></CardTitle>
+                <Card outline color="info" className="newItem" key={newItem.id }>
+                    <CardBody >
+                        <h5><strong>{newItem.title}</strong></h5>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <CardText>{newItem.date}</CardText>
+                            <div>
+                                <Link to="/comments">
+                                    <Button onClick={() => this.props.fetchComments(newItem.id, newItem)}
+                                            outline style={{margin: '0 10px'}} color="primary">Read Full Post</Button>
+                                </Link>
+                                <Button outline color="danger">Delete</Button>
+                            </div>
+                        </div>
                     </CardBody>
                 </Card>
             )
@@ -29,8 +39,8 @@ class MainContainers extends Component {
                 <h2>
                     Posts
                     <Link to="/news/new">
-                        <Button
-                            color="success"
+                        <Button outline
+                            color="primary"
                             className="float-lg-right"
                         >
                             Add new post
@@ -53,7 +63,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchNews: () => dispatch(fetchNews())
+        fetchNews: () => dispatch(fetchNews()),
+        fetchComments: (id, newItem) => dispatch(fetchComments(id, newItem))
     }
 };
 

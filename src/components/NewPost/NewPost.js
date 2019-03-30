@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Col, Form, FormGroup, FormText, Input, Label} from "reactstrap";
+import {Button, Col, Form, FormGroup, Input, Label} from "reactstrap";
 
 class NewPost extends Component {
     render() {
@@ -37,7 +37,7 @@ class NewPost extends Component {
                 </FormGroup>
                 <FormGroup row>
                     <Col sm={{offset: 2, size: 10}}>
-                        <Button type="submit" color="success">Save</Button>
+                        <Button outline type="submit" color="success">Save</Button>
                     </Col>
                 </FormGroup>
             </Form>

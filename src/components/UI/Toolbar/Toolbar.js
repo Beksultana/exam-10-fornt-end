@@ -4,7 +4,7 @@ import {NavLink as RouterNavLink} from 'react-router-dom';
 
 const Toolbar = () => {
     return (
-        <Navbar dark color="success" light expand="md">
+        <Navbar dark color="primary" light expand="md">
             <NavbarBrand tag={RouterNavLink} to="/">News</NavbarBrand>
             <Nav className="ml-auto" navbar>
                 <NavItem>
