@@ -30,10 +30,10 @@ class MainContainers extends Component {
                     Posts
                     <Link to="/news/new">
                         <Button
-                            color="primary"
+                            color="success"
                             className="float-lg-right"
                         >
-                            Add news
+                            Add new post
                         </Button>
                     </Link>
                 </h2>
