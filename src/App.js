@@ -3,8 +3,8 @@ import MainContainers from "./containers/MainContainers/MainContainers";
 import {Route, Switch} from "react-router";
 import {Container} from "reactstrap";
 import Toolbar from "./components/UI/Toolbar/Toolbar";
-import NewPost from "./components/NewPost/NewPost";
 import Comments from "./components/Comments/Comments";
+import newNews from "./components/Comments/newPosts/newNews";
 
 class App extends Component {
   render() {
@@ -16,8 +16,8 @@ class App extends Component {
           <Container style={{marginTop: '20px'}}>
               <Switch>
                   <Route path="/" exact component={MainContainers}/>
-                  <Route path="/news/new" exact component={NewPost}/>
-                  <Route path="/comments" exact component={Comments}/>
+                  <Route path="/news/new" component={newNews}/>
+                  <Route path="/comments" component={Comments}/>
               </Switch>
           </Container>
       </Fragment>

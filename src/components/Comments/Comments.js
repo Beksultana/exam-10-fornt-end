@@ -20,8 +20,8 @@ class Comments extends Component {
                 <Card key={comment.id}>
                     <CardBody style={{display: 'flex', justifyContent: 'space-between'}}>
                         <div>
-                            <h5>{comment.author}</h5>
-                            <CardText>{comment.comment}</CardText>
+                            <h5>{comment.author}: </h5>
+                            <p style={{paddingLeft: '20px'}}> {comment.comment}</p>
                         </div>
                         <div>
                             <Button outline color="danger">Delete</Button>
@@ -29,7 +29,7 @@ class Comments extends Component {
                     </CardBody>
                 </Card>
             )
-        });
+        }) ;
         return (
             <Fragment>
                 <div className="comments">

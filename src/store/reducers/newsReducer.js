@@ -24,7 +24,11 @@ const reducer = (state = initialState, action) => {
                 comments.news.push(action.newItem);
             }
             if (action.comments) {
-                comments.comment.push(action.comments[0]);
+                let count = 0;
+                for (let i = 0; i < count; i++) {
+                    count ++ ;
+                }
+                comments.comment.push(action.comments[count]);
             }
             return {
                 ...state,

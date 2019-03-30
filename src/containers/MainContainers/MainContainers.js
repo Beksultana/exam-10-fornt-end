@@ -17,16 +17,21 @@ class MainContainers extends Component {
         const news = this.props.news.map(newItem => {
             return (
                 <Card outline color="info" className="newItem" key={newItem.id }>
-                    <CardBody >
-                        <h5><strong>{newItem.title}</strong></h5>
-                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                            <CardText>{newItem.date}</CardText>
-                            <div>
-                                <Link to="/comments">
-                                    <Button onClick={() => this.props.fetchComments(newItem.id, newItem)}
-                                            outline style={{margin: '0 10px'}} color="primary">Read Full Post</Button>
-                                </Link>
-                                <Button outline color="danger">Delete</Button>
+                    <CardBody style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <div  style={{width: "12%"}}><img style={{width: "100px", height: '100px'}} src={newItem.image} alt=""/></div>
+                        <div style={{width: "63%"}}>
+                            <h5><strong>{newItem.title}</strong></h5>
+                            <p>{newItem.date}</p>
+                        </div>
+                        <div style={{width: "25%"}}>
+                            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                <div>
+                                    <Link to="/comments">
+                                        <Button onClick={() => this.props.fetchComments(newItem.id, newItem)}
+                                                outline style={{margin: '0 10px'}} color="primary">Read Full Post</Button>
+                                    </Link>
+                                    <Button outline color="danger">Delete</Button>
+                                </div>
                             </div>
                         </div>
                     </CardBody>
