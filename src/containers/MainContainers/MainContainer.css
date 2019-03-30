@@ -1,0 +1,9 @@
+.newItem {
+    margin: 10px;
+    box-shadow: 2px 2px 8px #ccc;
+    cursor: pointer;
+}
+.newItem:active {
+    opacity: 0.8;
+    background: #e1e2e0 ;
+}
